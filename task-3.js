@@ -17,16 +17,8 @@ const images = [
 ];
 
 const gallery = document.getElementById('gallery');
-images.forEach(image => {
-  const item = document.createElement('li');
-  const img = document.createElement('img');
-
-  item.setAttribute('class', 'gallery__item');
-  img.setAttribute('class', 'gallery__img');
-
-  img.setAttribute('src', image.url);
-  img.setAttribute('alt', image.alt);
-
-  item.appendChild(img);
-  gallery.appendChild(item);
+const imageCollection = images.map(image => {
+  return `<li class="gallery__item"><img class="gallery__img" 
+    src="${image.url}" alt="${image.alt}"/></li>`;
 });
+gallery.insertAdjacentHTML('afterbegin', imageCollection.join(''));
