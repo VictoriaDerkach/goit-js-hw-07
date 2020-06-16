@@ -5,7 +5,7 @@ function handleInputFocus() {
 }
 
 function handleInputBlur() {
-  if (input.value.length === input.dataset.length) {
+  if (input.value.length === Number(input.dataset.length)) {
     input.classList.add('valid');
   } else {
     input.classList.add('invalid');
